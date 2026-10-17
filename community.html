@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Live, anonymized community statistics from Town of Maple Plain 2026 property assessment submissions.">
+  <title>Community Data | Maple Plain Assessment Project</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/multipage.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="top-alert">Open Book: <strong>Friday, Oct. 23, noon to 2 p.m.</strong> &nbsp;|&nbsp; Board of Review: <strong>Saturday, Nov. 7, 10 a.m. to noon</strong>. <a href="dates.html">See deadlines</a></div>
+<header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><span>Maple Plain Assessment Project</span><span>Cumberland, Wisconsin area</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open navigation">☰</button><nav class="nav"><a href="index.html">Home</a><a href="dates.html">Key Dates</a><a href="challenge.html">Challenge</a><a href="evidence.html">Evidence</a><a href="resources.html">Resources</a><a class="page-nav-current" href="community.html">Community Data</a><a class="nav-cta" href="share.html">Share Your Assessment</a></nav></div></header>
+<main id="main">
+<section class="page-hero"><div class="container"><div class="breadcrumbs"><a href="index.html">Home</a> / Community Data</div><div class="eyebrow">Community evidence</div><h1>What residents are reporting.</h1><p>This dashboard uses anonymized, voluntarily submitted assessment information. It is designed to show patterns without publishing names, emails, addresses, parcel numbers, or raw free-text comments.</p></div></section>
+
+<section id="submission-confirmation" class="submission-confirmation" hidden><div class="container"><strong>Your assessment was submitted.</strong> Thank you. Your anonymized numbers will be included in the community dashboard after Netlify processes the submission. That can take a short moment.</div></section>
+
+<section class="section-soft compact-section">
+  <div class="container">
+    <div class="section-head"><span class="pill orange">Live dashboard</span><h2>The bigger picture starts here.</h2><p id="dashboard-status">Loading community submissions…</p></div>
+    <div class="dashboard-grid">
+      <article class="dashboard-stat"><span>Properties reported</span><strong id="stat-submissions">—</strong></article>
+      <article class="dashboard-stat"><span>Average assessment change</span><strong id="stat-average">—</strong></article>
+      <article class="dashboard-stat"><span>Median assessment change</span><strong id="stat-median">—</strong></article>
+      <article class="dashboard-stat"><span>100%+ increases reported</span><strong id="stat-over100">—</strong></article>
+      <article class="dashboard-stat"><span>Median land-value change</span><strong id="stat-land">—</strong></article>
+      <article class="dashboard-stat"><span>Planning to attend Open Book</span><strong id="stat-openbook">—</strong></article>
+    </div>
+  </div>
+</section>
+
+<section class="section-sand compact-section">
+  <div class="container">
+    <div class="section-head"><span class="pill">Compare patterns</span><h2>Lakefront, property type, and assessor contact.</h2><p>Small groups are intentionally suppressed until at least three submissions exist, which helps avoid turning an anonymous dataset back into identifiable households.</p></div>
+    <div class="dashboard-split">
+      <article class="data-panel"><h3>Lakefront vs. non-lakefront</h3><div class="comparison-row"><span>Lakefront submissions</span><strong id="lakefront-count">—</strong></div><div class="comparison-row"><span>Lakefront median change</span><strong id="lakefront-median">—</strong></div><div class="comparison-row"><span>Non-lakefront submissions</span><strong id="nonlake-count">—</strong></div><div class="comparison-row"><span>Non-lakefront median change</span><strong id="nonlake-median">—</strong></div></article>
+      <article class="data-panel"><h3>Contact experience</h3><div class="comparison-row"><span>Residents reporting assessor contact</span><strong id="contact-count">—</strong></div><div class="comparison-row"><span>No response / still pending</span><strong id="noresponse-count">—</strong></div><div class="comparison-row"><span>Seasonal properties reported</span><strong id="seasonal-count">—</strong></div></article>
+      <article class="data-panel"><h3>Property types reported</h3><div id="property-types" class="mini-list"><p>Loading…</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section-soft compact-section">
+  <div class="container two-col">
+    <div>
+      <div class="section-head"><span class="pill orange">You submitted. Now what?</span><h2>Turn one data point into community action.</h2><p>Submitting your numbers is useful. Sharing the project and showing up prepared is what makes the information matter.</p></div>
+      <div class="steps compact-steps">
+        <article class="step"><h3>Share this with your neighbors</h3><p>Ask other Maple Plain property owners to submit their assessment so the dataset becomes more representative.</p></article>
+        <article class="step"><h3>Contact the people who can respond</h3><p>Use the contact list for the assessor, Town officials, Wisconsin DOR, legislators, and the Governor's constituent-services office. Keep a record of each attempt and response.</p></article>
+        <article class="step"><h3>Do your homework</h3><p>Gather your notice, property record card, factual property details, recent comparable sales, photographs, and your own opinion of market value.</p></article>
+        <article class="step"><h3>Attend Open Book</h3><p>Friday, October 23, noon to 2 p.m. Ask what sales and adjustments support your value and document the answers.</p></article>
+        <article class="step"><h3>Protect your Board of Review rights</h3><p>If the issue is not resolved, follow the notice and objection deadlines. Do not assume an unanswered message extends your filing deadline.</p></article>
+      </div>
+    </div>
+    <aside class="share-panel">
+      <span class="pill orange">Spread the word</span>
+      <h2>More submissions make the patterns more useful.</h2>
+      <p>Share the project on Facebook, text the link to lake neighbors, or bring it to a neighborhood conversation.</p>
+      <p><a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmaple-plain-assessment-project.netlify.app%2F">Share on Facebook</a></p>
+      <p><button class="btn btn-outline" type="button" id="copy-site-link">Copy site link</button></p>
+      <p><a class="btn btn-outline" href="resources.html">Contact officials</a></p>
+      <p><a class="btn btn-outline" href="guide.html">Open printable challenge guide</a></p>
+    </aside>
+  </div>
+</section>
+
+<section class="section-lake compact-section"><div class="container"><div class="section-head"><span class="pill orange">Community notes</span><h2>Free-text comments are not automatically published.</h2><p>Resident comments may contain personal information, mistakes, or allegations that have not been verified. We keep those private by default. If community themes or representative comments are published later, they will be reviewed first and stripped of identifying information.</p></div></div></section>
+</main>
+<footer><div class="container footer-grid"><div><div class="footer-title">Maple Plain Assessment Project</div><p>Independent community resource. Community-submitted data has not been independently verified and does not replace a formal assessment objection.</p></div><div><a href="share.html">Share Your Assessment</a><br><a href="challenge.html">How to Challenge</a><br><a href="resources.html">Official Resources</a></div></div></footer>
+<script src="assets/js/app.js"></script><script src="assets/js/community.js"></script>
+</body></html>
