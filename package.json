@@ -1,0 +1,8 @@
+{
+  "name": "maple-plain-assessment-project",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "@netlify/blobs": "latest"
+  }
+}
