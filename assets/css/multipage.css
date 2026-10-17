@@ -1,0 +1,103 @@
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+  background: linear-gradient(135deg, rgba(15,47,67,.94), rgba(49,88,74,.78)), url('../images/beaver-dam-lake-clouds.jpg') center/cover no-repeat;
+  padding: 5rem 0 4rem;
+}
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(9,33,48,.88), rgba(9,33,48,.46));
+}
+.page-hero .container { position: relative; z-index: 1; }
+.page-hero h1 { font-size: clamp(2.5rem, 6vw, 4.8rem); line-height: 1; letter-spacing: -.045em; margin: .55rem 0 1rem; max-width: 900px; }
+.page-hero p { max-width: 760px; font-size: 1.15rem; color: #eef5f7; }
+.page-hero .eyebrow { color: #ffd39f; }
+
+.breadcrumbs { font-size: .9rem; margin-bottom: 1rem; color: #d5e3e8; }
+.breadcrumbs a { color: #fff; }
+
+.action-strip {
+  background: #7f271f;
+  color: var(--white);
+  padding: 1.1rem 0;
+}
+.action-strip .container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.action-strip strong { font-size: 1.08rem; }
+.action-strip a { color: #fff; font-weight: 900; }
+.action-buttons { display: flex; flex-wrap: wrap; gap: .65rem; }
+.action-buttons .btn { min-height: 42px; padding: .55rem .85rem; }
+
+.portal-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.portal-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: var(--white);
+  border: 1px solid rgba(22,63,89,.11);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(15,47,67,.08);
+}
+.portal-card h3 { margin: .4rem 0 .55rem; color: var(--lake-deep); }
+.portal-card p { color: var(--muted); }
+.portal-card .btn { margin-top: auto; align-self: flex-start; }
+.portal-icon { font-size: 1.6rem; }
+
+.compact-section { padding: 3.8rem 0; }
+.page-nav-current { color: var(--orange-dark) !important; text-decoration: underline !important; text-underline-offset: .35rem; }
+
+.quick-actions { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; }
+.quick-action { background: var(--lake-deep); color: var(--white); border-radius: var(--radius); padding: 1.4rem; }
+.quick-action h3 { color: var(--white); margin-top: 0; }
+.quick-action p { color: #d1e0e5; }
+.quick-action a { color: #ffd39f; font-weight: 900; }
+
+.contact-list { display: grid; gap: .85rem; }
+.contact-row { background: var(--white); border: 1px solid rgba(22,63,89,.12); border-radius: var(--radius-sm); padding: 1rem; }
+.contact-row strong { color: var(--lake-deep); display: block; }
+
+.guide-toolbar { position: sticky; top: 0; z-index: 100; background: var(--lake-deep); color: var(--white); padding: .8rem 1rem; box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+.guide-toolbar .container { display: flex; gap: .75rem; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.guide-sheet { background: var(--white); max-width: 900px; margin: 2rem auto; padding: 2rem; box-shadow: var(--shadow); }
+.guide-sheet h1 { color: var(--lake-deep); font-size: 2.4rem; line-height: 1.05; margin-bottom: .3rem; }
+.guide-sheet h2 { color: var(--lake-deep); border-bottom: 2px solid var(--lake-soft); padding-bottom: .35rem; margin-top: 2rem; }
+.guide-sheet h3 { color: var(--orange-dark); margin-bottom: .3rem; }
+.guide-meta { color: var(--muted); font-size: .92rem; }
+.guide-deadline { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.guide-box { border: 1px solid #d9e2e5; border-radius: 10px; padding: .9rem; break-inside: avoid; }
+.guide-box strong { color: var(--lake-deep); }
+.guide-checks { margin: .5rem 0; padding-left: 1.2rem; }
+.guide-checks li { margin: .3rem 0; }
+.guide-small { font-size: .86rem; color: var(--muted); }
+.guide-url { word-break: break-all; }
+
+.form-section-note { padding: 1rem; border-radius: var(--radius-sm); background: var(--lake-soft); color: var(--lake-deep); margin-bottom: 1rem; }
+.metric-preview { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .8rem; }
+.metric-preview > div { background: var(--white); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid #dde6e8; }
+.metric-preview strong { display: block; color: var(--lake-deep); font-size: 1.35rem; }
+
+@media (max-width: 980px) {
+  .portal-grid, .quick-actions { grid-template-columns: 1fr 1fr; }
+  .metric-preview { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .portal-grid, .quick-actions, .guide-deadline, .metric-preview { grid-template-columns: 1fr; }
+  .page-hero { padding: 3.5rem 0 3rem; }
+  .guide-sheet { margin: 0; box-shadow: none; }
+}
+
+@media print {
+  body.guide-page { background: #fff; color: #111; font-size: 10.5pt; }
+  .guide-toolbar, .no-print { display: none !important; }
+  .guide-sheet { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  .guide-sheet h1 { font-size: 22pt; }
+  .guide-sheet h2 { font-size: 15pt; margin-top: 16pt; }
+  .guide-sheet h3 { font-size: 12pt; }
+  .guide-box { border-color: #aaa; }
+  a { color: #111; text-decoration: none; }
+  .guide-url { font-size: 8.5pt; }
+  @page { margin: .55in; }
+}
