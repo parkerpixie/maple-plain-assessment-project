@@ -90,11 +90,50 @@
         ? `Your total assessment changed from ${money(oldValue)} to ${money(newValue)}, a change of ${money(dollar)} (${pct.toFixed(1)}%).`
         : 'Enter your old and new totals to calculate the change.';
     };
+
     ['previous_total','new_total','previous_land','new_land'].forEach(name => {
       const el = form.elements[name];
       if (el) el.addEventListener('input', updateFormMath);
     });
-    form.addEventListener('submit', updateFormMath);
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      updateFormMath();
+
+      const button = form.querySelector('button[type="submit"]');
+      const status = document.getElementById('form-submit-status');
+      if (button) {
+        button.disabled = true;
+        button.textContent = 'Submitting…';
+      }
+      if (status) {
+        status.hidden = false;
+        status.className = 'callout form-submit-status';
+        status.textContent = 'Submitting your assessment securely…';
+      }
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch('/', {
+          method: 'POST',
+          body: formData
+        });
+        if (!response.ok) throw new Error(`Submission failed with status ${response.status}`);
+        window.location.assign('community.html?submitted=1');
+      } catch (error) {
+        console.error(error);
+        if (status) {
+          status.hidden = false;
+          status.className = 'callout warning form-submit-status';
+          status.textContent = 'We could not confirm your submission. Your entries are still on this page, so nothing is lost. Please try again, or copy your values before refreshing.';
+        }
+        if (button) {
+          button.disabled = false;
+          button.textContent = 'Submit my assessment';
+        }
+      }
+    });
+
     updateFormMath();
   }
 
